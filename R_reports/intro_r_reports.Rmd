@@ -1,0 +1,20 @@
+---
+title: "LifeExpectancy Vs Year"
+author: "Dheeral Bhole"
+date: "November 12, 2017"
+output: html_document
+---
+
+I am representing data in Figure
+```{r load_pkgs, echo=FALSE}
+library(ggplot2)
+```
+
+```{r load_data, echo=FALSE}
+fileName <- "C:/Users/Dheeral/Desktop/SWC_fall2017/Data/gapminder.txt"
+gapminder <- read.table(fileName,header=TRUE)
+ggplot(gapminder,aes(x=year,y=lifeExp)) + 
+  geom_point(aes(color=country)) +
+  geom_line(color="black") +
+  theme(legend.position = "none")
+```
